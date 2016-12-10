@@ -29,8 +29,8 @@
  * we have esp pins 16,0,2,15-ss,
  */
 //Pin declartion the other you need are controlled by the SPI library
-const int ADS1292_DRDY_PIN = 16;
-const int ADS1292_CS_PIN = 4;
+const int ADS1292_DRDY_PIN = 4;
+const int ADS1292_CS_PIN = 16;
 const int ADS1292_START_PIN = 0;
 const int ADS1292_PWDN_PIN = 2;
 
