@@ -5,6 +5,10 @@
 
 class ecgwifi {
     public:
+    WiFiClient clienta;
+    WiFiServer *server;
+    ecgwifi()
+    {}
     void connect(char* ssid,char* pass) {
         delay(10);
         WiFi.begin(ssid, pass);
@@ -34,9 +38,29 @@ class ecgwifi {
     {
     }
 
-    void server()
+    void startserver()
     {
-        WiFiServer server(80);
-          
+        server =  new WiFiServer(80);
+        server->begin();
+        
     }
+    void serve(String resp)
+    {
+          if (!clienta | !clienta.connected() ) {
+            clienta = server->available();
+            if (!clienta) 
+              return;
+            clienta.setNoDelay(1);
+          }
+          clienta.flush();
+          clienta.print(resp);
+    }
+    void flush()
+    {
+        if (clienta | clienta.connected() ) 
+        {
+          clienta.flush();
+        }
+    }
+    
 };
