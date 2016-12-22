@@ -50,7 +50,7 @@ class ecgwifi {
             clienta = server->available();
             if (!clienta) 
               return;
-            clienta.setNoDelay(1);
+            //clienta.setNoDelay(1);
           }
           clienta.flush();
           clienta.print(resp);

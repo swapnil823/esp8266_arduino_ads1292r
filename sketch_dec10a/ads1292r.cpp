@@ -8,7 +8,7 @@
 #include "ads1292r.h"
 #include <SPI.h>
 
-char* ads1292r::ads1292_Read_Data()
+char* ICACHE_RAM_ATTR ads1292r::ads1292_Read_Data()
 {
 
    static char SPI_Dummy_Buff[10];

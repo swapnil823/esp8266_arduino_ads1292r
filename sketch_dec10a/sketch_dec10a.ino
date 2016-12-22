@@ -24,7 +24,7 @@ void setup()
 
 void loop() 
 {
- String s=ecghandle.send_data();
+ String s = ecghandle.send_data();
  wifi.serve(s);
  Serial.print(s);
 } 

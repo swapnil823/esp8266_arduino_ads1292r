@@ -47,7 +47,7 @@ class ecg {
         return data;
       }
       
-      void acquire_data()
+      void ICACHE_RAM_ATTR acquire_data()
       {
            SPI_RX_Buff_Ptr = ADS1292.ads1292_Read_Data();
            
